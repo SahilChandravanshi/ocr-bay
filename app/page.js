@@ -39,7 +39,7 @@ export default function Home() {
 	};
 
 	return (
-		<main className="flex min-h-screen flex-col p-4 gap-4 font-primary bg-teal-600">
+		<main className="flex min-h-screen flex-col p-4 gap-4 font-primary bg-teal-600 w-full">
 			<h1 className="text-3xl font-bold font-secondary">OCR Bay</h1>
 			<p>Get words in image</p>
 			<div className="inputWrapper relative">
@@ -59,31 +59,35 @@ export default function Home() {
 				/>
 			</div>
 
-			<div className="result mt-4 grid items-center justify-center md:grid-cols-2 gap-2">
-				{selectedImage && (
-					<div className="boxImage bg-orange-400 max-h-72 md:max-h-96 p-1 overflow-y-auto flex flex-col items-center">
-						<Image
-							src={URL.createObjectURL(selectedImage)}
-							alt="thumb"
-							width={1000}
-							height={500}
-						/>
-					</div>
-				)}
-				{progress < 100 && progress > 0 ? (
-					<div>
-						<div className="progress-label">Progress ({progress}%)</div>
-						<div className="progress-bar">
-							<div className="progress"></div>
+			<div className="result mt-4 grid items-center justify-center sm:grid-cols-2 gap-2">
+				<div className="bg-orange-400 h-72 w-[95vw] sm:w-full sm:h-96 sm:max-h-96 p-1 overflow-y-auto flex flex-col items-center">
+					{selectedImage && (
+						<div className="boxImage h-96 sm:max-h-96 p-1 overflow-y-auto flex flex-col items-center">
+							<Image
+								src={URL.createObjectURL(selectedImage)}
+								alt="thumb"
+								width={1000}
+								height={500}
+							/>
 						</div>
-					</div>
-				) : (
-					textResult && (
-						<div className="box-p font-codeFont bg-gray-300 h-96 overflow-auto p-4 font-light">
-							<p>{textResult}</p>
+					)}
+				</div>
+				<div className="bg-gray-400 h-72 w-[95vw] sm:w-full sm:h-96 sm:max-h-96 p-1 overflow-y-auto flex flex-col items-center justify-center">
+					{progress < 100 && progress > 0 ? (
+						<div>
+							<div className="progress-label">Progress ({progress}%)</div>
+							<div className="progress-bar">
+								<div className="progress"></div>
+							</div>
 						</div>
-					)
-				)}
+					) : (
+						textResult && (
+							<div className="box-p font-codeFont h-96 overflow-auto p-4 font-light">
+								<p>{textResult}</p>
+							</div>
+						)
+					)}
+				</div>
 				{/* {progress < 100 && progress > 0 && (
 					<div>
 						<div className="progress-label">Progress ({progress}%)</div>
