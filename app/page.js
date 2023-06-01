@@ -40,22 +40,20 @@ export default function Home() {
 
 	return (
 		<main className="flex min-h-screen flex-col py-4 px-8 gap-4 font-primary bg-gray-100 w-full">
-			<h1 className="text-3xl font-bold font-secondary"><span className="text-purple-700">OCR</span>Bay</h1>
-			<p>Get words in image</p>
+			<label htmlFor="upload">Extract words from image. <span className="text-purple-700 hover:text-purple-900">Click here to select image!</span></label>
 			<div className="inputWrapper relative">
 				<label
 					htmlFor="upload"
 					className="inline-block py-[8px] px-[12px] cursor-pointer rounded shadow bg-purple-700 hover:bg-purple-900 text-white"
 				>
-					{" "}
-					Upload Image{" "}
+					Upload Image
 				</label>
 				<input
 					type="file"
 					id="upload"
 					accept="image/*"
 					onChange={handleChangeImage}
-					className="absolute left-[26px] top-[6px] text-lg z-[-1]"
+					className="absolute left-[26px] top-[6px] text-lg hidden"
 				/>
 			</div>
 
