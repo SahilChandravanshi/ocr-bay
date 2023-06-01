@@ -39,13 +39,13 @@ export default function Home() {
 	};
 
 	return (
-		<main className="flex min-h-screen flex-col p-4 gap-4 font-primary bg-teal-600 w-full">
-			<h1 className="text-3xl font-bold font-secondary">OCR Bay</h1>
+		<main className="flex min-h-screen flex-col py-4 px-8 gap-4 font-primary bg-gray-100 w-full">
+			<h1 className="text-3xl font-bold font-secondary"><span className="text-purple-700">OCR</span>Bay</h1>
 			<p>Get words in image</p>
 			<div className="inputWrapper relative">
 				<label
 					htmlFor="upload"
-					className="inline-block py-[8px] px-[12px] cursor-pointer rounded-md bg-orange-400 text-white"
+					className="inline-block py-[8px] px-[12px] cursor-pointer rounded shadow bg-purple-700 hover:bg-purple-900 text-white"
 				>
 					{" "}
 					Upload Image{" "}
@@ -60,7 +60,7 @@ export default function Home() {
 			</div>
 
 			<div className="result mt-4 grid items-center justify-center sm:grid-cols-2 gap-2">
-				<div className="bg-orange-400 h-72 w-[95vw] sm:w-full sm:h-96 sm:max-h-96 p-1 overflow-y-auto flex flex-col items-center">
+				<div className="bg-white h-72 w-[95vw] sm:w-full sm:h-96 sm:max-h-96 p-1 overflow-y-auto flex flex-col items-center rounded shadow">
 					{selectedImage && (
 						<div className="boxImage h-96 sm:max-h-96 p-1 overflow-y-auto flex flex-col items-center">
 							<Image
@@ -72,7 +72,7 @@ export default function Home() {
 						</div>
 					)}
 				</div>
-				<div className="bg-gray-400 h-72 w-[95vw] sm:w-full sm:h-96 sm:max-h-96 p-1 overflow-y-auto flex flex-col items-center justify-center">
+				<div className="bg-white h-72 w-[95vw] sm:w-full sm:h-96 sm:max-h-96 p-1 overflow-y-auto flex flex-col items-center justify-center rounded shadow">
 					{progress < 100 && progress > 0 ? (
 						<div>
 							<div className="progress-label">Progress ({progress}%)</div>
