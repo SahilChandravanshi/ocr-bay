@@ -1,14 +1,41 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { createWorker } from "tesseract.js";
+import Tesseract from "tesseract.js";
+import { useEffect, useState, useCallback } from "react";
 
 export default function Home() {
 	const [selectedImage, setSelectedImage] = useState(null);
-	const [textResult, setTextResult] = useState(
-		" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus at et accusamus aliquid veniam ipsam esse voluptates voluptas quibusdam repudiandae."
-	);
+	const [textResult, setTextResult] = useState("");
+	const [progress, setProgress] = useState(0);
+
+	const convertImageToText = useCallback(async () => {
+		if (!selectedImage) return;
+		Tesseract.recognize(selectedImage, "eng", {
+			logger: (m) => {
+				// console.log(m);
+				setProgress(parseInt(m.progress * 100));
+			},
+		})
+			.then(({ data: { text } }) => {
+				setTextResult(text);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, [selectedImage]);
+
+	useEffect(() => {
+		convertImageToText();
+	}, [convertImageToText, selectedImage]);
+
 	const handleChangeImage = (e) => {
-		setSelectedImage(e.target.files[0]);
+		if (e.target.files[0]) {
+			setSelectedImage(e.target.files[0]);
+		} else {
+			setSelectedImage(null);
+			setTextResult("");
+		}
 	};
 
 	return (
@@ -43,12 +70,47 @@ export default function Home() {
 						/>
 					</div>
 				)}
-				{textResult && (
-					<div className="box-p font-codeFont bg-gray-300 md:h-[100%] p-4 font-light">
-						<p>{textResult}</p>
+				{progress < 100 && progress > 0 ? (
+					<div>
+						<div className="progress-label">Progress ({progress}%)</div>
+						<div className="progress-bar">
+							<div className="progress"></div>
+						</div>
+					</div>
+				) : (
+					textResult && (
+						<div className="box-p font-codeFont bg-gray-300 h-96 overflow-auto p-4 font-light">
+							<p>{textResult}</p>
+						</div>
+					)
+				)}
+				{/* {progress < 100 && progress > 0 && (
+					<div>
+						<div className="progress-label">Progress ({progress}%)</div>
+						<div className="progress-bar">
+							<div className="progress" style={{ width: `${progress}%` }}></div>
+						</div>
 					</div>
 				)}
+				{textResult && (
+					<div className="box-p font-codeFont bg-gray-300 max-h-96 overflow-auto p-4 font-light">
+						<p>{textResult}</p>
+					</div>
+				)} */}
 			</div>
 		</main>
 	);
 }
+
+// define worker
+// const worker = createWorker();
+// const convertImageToText = useCallback(async () => {
+// 	// if (!selectedImage) return;
+// 	await worker.load();
+// 	await worker.loadLanguage("eng");
+// 	await worker.initialize("eng");
+// 	const {
+// 		data: { text },
+// 	} = await worker.recognize(selectedImage);
+// 	console.log(text);
+// },[selectedImage, worker])
