@@ -1,6 +1,6 @@
 import React from "react";
 import { BsGithub, BsTwitter } from "react-icons/bs";
-import { AiOutlineMedium, SiHashnode } from "react-icons/si";
+import { SiHashnode } from "react-icons/si";
 
 const Footer = () => {
 	return (
@@ -12,7 +12,7 @@ const Footer = () => {
 					</h3>
 				</a>
 				<p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-					© 2023 Tailblocks —
+					© 2023 OCRBay —
 					<a
 						href="https://sahilchandravanshi.com/"
 						className="text-gray-600 ml-1"
