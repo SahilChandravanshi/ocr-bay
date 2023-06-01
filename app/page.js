@@ -3,7 +3,6 @@ import Image from "next/image";
 // import { createWorker } from "tesseract.js";
 import Tesseract from "tesseract.js";
 import { useEffect, useState, useCallback } from "react";
-import { FiUpload } from 'react-icons/fi';
 import { FaFileUpload } from 'react-icons/fa';
 
 export default function Home() {
