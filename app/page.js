@@ -51,7 +51,7 @@ export default function Home() {
 					Click here to select image!
 				</label>
 			</p>
-			<div className="inputWrapper relative">
+			<div className="inputWrapper relative hidden">
 				<input
 					type="file"
 					id="upload"
