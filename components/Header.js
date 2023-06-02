@@ -1,10 +1,13 @@
-import Image from "next/image";
-import React from "react";
-import { SiKofi } from "react-icons/si";
+"use client"
+import React, { useState } from "react";
+import { BsGithub, BsTwitter } from "react-icons/bs";
+import { SiHashnode, SiKofi } from "react-icons/si";
+// import { FaDonate } from "react-icons/fa";
+// import SupportModal from "./SupportModal";
 
 const Header = () => {
 	return (
-		<div className="flex flex-wrap">
+		<div className="flex flex-wrap fixed">
 			{/* <!-- navbar --> */}
 			<nav className="flex justify-between bg-white border-b-[1px] w-screen">
 				<div className="px-5 xl:px-12 py-2 flex w-full items-center">
@@ -23,11 +26,17 @@ const Header = () => {
 					</ul>
 					{/* <!-- Header Icons and buttons --> */}
 					<div className="hidden xl:flex items-center space-x-5">
-						<a href="https://ko-fi.com/Z8Z3H8EXU" target="_blank">
-							<button className="py-2 px-4 cursor-pointer rounded shadow bg-purple-700 hover:bg-purple-900 text-white flex justify-center items-center gap-2">
-								<SiKofi className="text-3xl"/> Support Project
-							</button>
-						</a>
+					<span className="inline-flex gap-3 sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start text-gray-500 ">
+					<a href="github.com/sahilChandravanshi/" className="text-xl hover:text-purple-700">
+						<BsGithub />
+					</a>
+					<a href="https://twitter.com/SahilSaklash/" className="text-xl hover:text-purple-700">
+						<BsTwitter />
+					</a>
+					<a href="https://blog.sahilchandravanshi.com/" className="text-xl hover:text-purple-700">
+						<SiHashnode />
+					</a>
+				</span>	
 					</div>
 				</div>
 				{/* <!-- Responsive navbar --> */}

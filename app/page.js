@@ -3,12 +3,14 @@ import Image from "next/image";
 // import { createWorker } from "tesseract.js";
 import Tesseract from "tesseract.js";
 import { useEffect, useState, useCallback } from "react";
-import { FaFileUpload } from 'react-icons/fa';
+import { FaDonate, FaFileUpload } from "react-icons/fa";
+import SupportModal from "@/components/SupportModal";
 
 export default function Home() {
 	const [selectedImage, setSelectedImage] = useState(null);
 	const [textResult, setTextResult] = useState("");
 	const [progress, setProgress] = useState(0);
+	const [modal, setModal] = useState(false);
 
 	const convertImageToText = useCallback(async () => {
 		if (!selectedImage) return;
@@ -40,7 +42,7 @@ export default function Home() {
 	};
 
 	return (
-		<main className="flex min-h-screen flex-col py-4 px-8 gap-2 font-primary bg-gray-100 w-full">
+		<main className="flex min-h-screen flex-col py-4 px-8 gap-2 font-primary bg-gray-100 w-full justify-center">
 			<p>
 				Extract words from image.{" "}
 				<label
@@ -69,7 +71,8 @@ export default function Home() {
 								htmlFor="upload"
 								className="py-4 px-8 cursor-pointer rounded border-[1.5px] border-purple-300 hover:border-purple-600 hover:bg-purple-100 text-purple-500 hover:text-purple-900 flex flex-col gap-2 items-center justify-center text-sm"
 							>
-								<FaFileUpload className="text-3xl text-purple-600 hover:text-purple-900"/>Select Image
+								<FaFileUpload className="text-3xl text-purple-600 hover:text-purple-900" />
+								Select Image
 							</label>
 						</div>
 					) : (
@@ -102,19 +105,16 @@ export default function Home() {
 					)}
 				</div>
 			</div>
+			<button
+				className="py-2 px-4 cursor-pointer rounded-full w-20 h-20 shadow bg-purple-700 hover:bg-purple-900 text-white flex flex-col justify-center items-center gap-2 fixed z-10 bottom-4 right-6 text-xs"
+				onClick={() => {
+					setModal(true);
+				}}
+			>
+				<FaDonate className="text-2xl" />
+				Donate
+			</button>
+			<SupportModal open={modal} />
 		</main>
 	);
 }
-
-// define worker
-// const worker = createWorker();
-// const convertImageToText = useCallback(async () => {
-// 	// if (!selectedImage) return;
-// 	await worker.load();
-// 	await worker.loadLanguage("eng");
-// 	await worker.initialize("eng");
-// 	const {
-// 		data: { text },
-// 	} = await worker.recognize(selectedImage);
-// 	console.log(text);
-// },[selectedImage, worker])

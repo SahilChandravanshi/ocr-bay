@@ -1,6 +1,4 @@
 import React from "react";
-import { BsGithub, BsTwitter } from "react-icons/bs";
-import { SiHashnode } from "react-icons/si";
 
 const Footer = () => {
 	return (
@@ -24,17 +22,6 @@ const Footer = () => {
 						</span>
 					</a>
 				</p>
-				<span className="inline-flex gap-3 sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start text-gray-500 ">
-					<a href="github.com/sahilChandravanshi/" className="text-xl hover:text-purple-700">
-						<BsGithub />
-					</a>
-					<a href="https://twitter.com/SahilSaklash/" className="text-xl hover:text-purple-700">
-						<BsTwitter />
-					</a>
-					<a href="https://blog.sahilchandravanshi.com/" className="text-xl hover:text-purple-700">
-						<SiHashnode />
-					</a>
-				</span>
 			</div>
 		</footer>
 	);
