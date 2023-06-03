@@ -15,7 +15,7 @@ const SupportModal = ({ open, setModal }) => {
 					}}
 				>
 					<div
-						className="bg-purple-200 text-gray-500 pt-8 relative max-w-[300px] sm:max-w-full text-center flex flex-col items-center justify-center h-[58%] sm:h-[75%] w-auto"
+						className="bg-purple-200 text-gray-500 pt-8 relative max-w-[300px] sm:max-w-full text-center flex flex-col items-center justify-center w-auto rounded shadow"
 						onClick={(e) => {
 							e.stopPropagation();
 						}}
@@ -25,7 +25,7 @@ const SupportModal = ({ open, setModal }) => {
 							<p>Donate</p>
 						</span>
 						<IoClose
-							className="text-xl text-purple-600 hover:text-purple-900 font-bold absolute right-6 top-6"
+							className="text-xl text-purple-600 hover:text-purple-900 font-bold absolute right-6 top-6 cursor-pointer"
 							onClick={() => {
 								setModal(false);
 							}}
@@ -38,13 +38,12 @@ const SupportModal = ({ open, setModal }) => {
 							height={600}
 							alt="user"
 						/>
-						<h3 className="my-2 mx-0">Scan with any UPI app</h3>
-						<h6 className="uppercase my-[5px] mx-0">or</h6>
-						<p className="text-sm leading-5">
-							You can support this project on Ko-Fi
+						<h3 className="mt-2 font-bold text-purple-600">Scan with any UPI app</h3>
+						<h6 className="uppercase my-1">or</h6>
+						<p className="text-sm">
+							Support this project on Ko-Fi
 						</p>
-						<div class="buttons">
-							<button className="bg-purple-600 hover:bg-purple-900 rounded flex items-center justify-center w-auto px-4">
+							<button className="bg-purple-600 hover:bg-purple-900 rounded flex items-center justify-center w-auto px-4 mt-2">
 								<a
 									href="https://ko-fi.com/Z8Z3H8EXU"
 									target="_blank"
@@ -60,13 +59,11 @@ const SupportModal = ({ open, setModal }) => {
 									<p className="text-white text-sm">Buy me coffee</p>
 								</a>
 							</button>
-						</div>
 						<div
 							class="skills"
 							className="flex justify-center bg-purple-900 text-sm text-gray-200 border-b-2 rounded border-pruple-900 p-4 mt-8"
 						>
 							<h6
-								// style="margin: 5px 0; text-transform: uppercase; text-align:center;"
 								className="uppercase text-center"
 							>
 								If you like this project, do support
