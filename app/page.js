@@ -106,7 +106,7 @@ export default function Home() {
 				</div>
 			</div>
 			<button
-				className="py-2 px-4 cursor-pointer rounded-full w-20 h-20 shadow bg-purple-700 hover:bg-purple-900 text-white flex flex-col justify-center items-center gap-2 fixed z-10 bottom-4 right-6 text-xs"
+				className="py-2 px-4 cursor-pointer rounded-full w-20 h-20 shadow bg-purple-700 hover:bg-purple-900 text-white flex flex-col justify-center items-center gap-2 fixed z-10 bottom-12 sm:bottom-4 right-6 text-xs"
 				onClick={() => {
 					setModal(true);
 				}}
