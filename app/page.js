@@ -114,7 +114,7 @@ export default function Home() {
 				<FaDonate className="text-2xl" />
 				Donate
 			</button>
-			<SupportModal open={modal} />
+			<SupportModal open={modal} setModal={setModal}/>
 		</main>
 	);
 }
