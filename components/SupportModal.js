@@ -9,13 +9,13 @@ const SupportModal = ({ open, setModal }) => {
 		<>
 			{open && (
 				<div
-					className="fixed z-20 sm:left-1/3  h-[58%] sm:h-[75%] w-auto flex gap-4 rounded border-2 border-purple-200 shadow"
+					className="fixed left-0 top-0 z-20 h-full w-full flex items-center justify-center bg-gray-700 bg-opacity-25"
 					onClick={() => {
 						setModal(false);
 					}}
 				>
 					<div
-						className="bg-purple-200 text-gray-500 pt-8 relative max-w-[300px] sm:max-w-full text-center flex flex-col items-center justify-center"
+						className="bg-purple-200 text-gray-500 pt-8 relative max-w-[300px] sm:max-w-full text-center flex flex-col items-center justify-center h-[58%] sm:h-[75%] w-auto"
 						onClick={(e) => {
 							e.stopPropagation();
 						}}
