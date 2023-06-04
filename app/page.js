@@ -5,6 +5,7 @@ import Tesseract from "tesseract.js";
 import { useEffect, useState, useCallback } from "react";
 import { FaDonate, FaFileUpload } from "react-icons/fa";
 import SupportModal from "@/components/SupportModal";
+import TextButtons from "@/components/TextButtons";
 
 export default function Home() {
 	const [selectedImage, setSelectedImage] = useState(null);
@@ -104,6 +105,7 @@ export default function Home() {
 						)
 					)}
 				</div>
+				{/* <TextButtons textResult={textResult}/> */}
 			</div>
 			<button
 				className="py-2 px-4 cursor-pointer rounded-full w-20 h-20 shadow bg-purple-700 hover:bg-purple-900 text-white flex flex-col justify-center items-center gap-2 fixed z-10 bottom-12 sm:bottom-4 right-6 text-xs"
