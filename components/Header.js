@@ -27,7 +27,7 @@ const Header = () => {
 					{/* <!-- Header Icons and buttons --> */}
 					<div className="hidden xl:flex items-center space-x-5">
 					<span className="inline-flex gap-3 sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start text-gray-500 ">
-					<a href="github.com/sahilChandravanshi/" className="text-xl hover:text-purple-700">
+					<a href="https://github.com/sahilchandravanshi" className="text-xl hover:text-purple-700">
 						<BsGithub />
 					</a>
 					<a href="https://twitter.com/SahilSaklash/" className="text-xl hover:text-purple-700">
