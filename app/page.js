@@ -1,10 +1,11 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { FaFileAlt } from "react-icons/fa";
 
 export default function Home() {
 	return (
-		<div className="w-screen px-5 xl:px-0 h-screen flex flex-col justify-center items-center">
+		<div className="w-screen px-5 xl:px-0 h-screen flex flex-col justify-center items-center pt-16">
 			<a
 				href="https://twitter.com/steventey/status/1616505632001232896"
 				target="_blank"
@@ -29,7 +30,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div className="-mb-4">
+			<div className="-mb-16 flex flex-col">
 				<Link
 					href={"extract"}
 					className="group mx-auto mt-6 flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black font-primary"
@@ -37,6 +38,22 @@ export default function Home() {
 					<FaFileAlt />
 					<p>Extract Text!</p>
 				</Link>
+				{/* <Image
+					src={"/ocr3.gif"}
+					alt="ocrGif"
+					width={500}
+					height={500}
+					className="mt-4"
+				/> */}
+			</div>
+			<div className="flex justify-center items-center">
+				<Image
+					src={"/ocr3.gif"}
+					alt="ocrGif"
+					width={500}
+					height={500}
+					className="mt-6 pl-6"
+				/>
 			</div>
 		</div>
 	);
