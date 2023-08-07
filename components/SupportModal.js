@@ -20,7 +20,7 @@ const SupportModal = ({ open, setModal }) => {
 							e.stopPropagation();
 						}}
 					>
-						<span className="text-md text-purple-900 bg-white px-2 py-1 rounded text-sm font-bold absolute left-6 top-6 flex items-center justify-center gap-2">
+						<span className="text-md text-purple-900 bg-white px-2 py-1 rounded-full text-sm font-bold absolute left-6 top-6 flex items-center justify-center gap-2">
 							<FaHeart className="text-red-400 hover:text-purple-600 hover:text-lg" />{" "}
 							<p>Donate</p>
 						</span>
@@ -38,34 +38,30 @@ const SupportModal = ({ open, setModal }) => {
 							height={600}
 							alt="user"
 						/>
-						<h3 className="mt-2 font-bold text-purple-600">Scan with any UPI app</h3>
+						<h3 className="mt-2 font-bold text-black">Scan with any UPI app</h3>
 						<h6 className="uppercase my-1">or</h6>
-						<p className="text-sm">
-							Support this project on Ko-Fi
-						</p>
-							<button className="bg-purple-600 hover:bg-purple-900 rounded flex items-center justify-center w-auto px-4 mt-2">
-								<a
-									href="https://ko-fi.com/Z8Z3H8EXU"
-									target="_blank"
-									className="flex items-center justify-center "
-								>
-									<Image
-										height={40}
-										width={40}
-										className="border-0"
-										src="/assets/ko-fi.png"
-										alt="Buy Me a Coffee at ko-fi.com"
-									/>
-									<p className="text-white text-sm">Buy me coffee</p>
-								</a>
-							</button>
+						<p className="text-sm">Support this project on Ko-Fi</p>
+						<button className="bg-purple-600 hover:bg-purple-900 rounded-full flex items-center justify-center w-auto px-4 mt-2">
+							<a
+								href="https://ko-fi.com/Z8Z3H8EXU"
+								target="_blank"
+								className="flex items-center justify-center "
+							>
+								<Image
+									height={40}
+									width={40}
+									className="border-0"
+									src="/assets/ko-fi.png"
+									alt="Buy Me a Coffee at ko-fi.com"
+								/>
+								<p className="text-white text-sm">Buy me coffee</p>
+							</a>
+						</button>
 						<div
 							class="skills"
-							className="flex justify-center bg-purple-900 text-sm text-gray-200 border-b-2 rounded border-pruple-900 p-4 mt-8"
+							className="flex justify-center bg-black text-sm text-white border-b-2 rounded border-pruple-900 p-4 mt-8"
 						>
-							<h6
-								className="uppercase text-center"
-							>
+							<h6 className="uppercase text-center">
 								If you like this project, do support
 							</h6>
 						</div>
